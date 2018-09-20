@@ -9,7 +9,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>si_api</name>
+	<name>ranjeeta_srping</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
