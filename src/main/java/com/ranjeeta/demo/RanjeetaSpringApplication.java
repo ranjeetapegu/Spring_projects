@@ -2,9 +2,10 @@ package com.ranjeeta.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class RanjeetaSpringApplication {
+public class RanjeetaSpringApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RanjeetaSpringApplication.class, args);
