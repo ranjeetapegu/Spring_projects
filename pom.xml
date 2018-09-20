@@ -64,11 +64,11 @@
 		<!-- <scope>system</scope> -->
 		<!-- <systemPath>/Users/rakesh.jamla@ibm.com/Documents/DB_Jar/db2jcc4.jar</systemPath> -->
 		<!-- </dependency> -->
-		<dependency>
+		<!--<dependency>
 			<groupId>com.ibm</groupId>
 			<artifactId>db2jcc4</artifactId>
 			<version>4.19.72</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
