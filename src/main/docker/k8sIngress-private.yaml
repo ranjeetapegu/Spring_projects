@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: si-api-ingress
+  annotations:
+    ingress.bluemix.net/ALB-ID: "private-crb1470a2853a34eb39f6b356881c3650b-alb1"
+spec:
+  rules:
+  - host: si-api.9.208.8.32.nip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: kubernetes-si
+          servicePort: 80

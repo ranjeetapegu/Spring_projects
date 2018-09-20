@@ -1,0 +1,61 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: si-api
+  name: si-api-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: si-api
+  strategy:
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 20%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: si-api
+    spec:
+      containers:
+      - image: registry.ng.bluemix.net/dsw_im_saas_incentive/si-api:latest
+        imagePullPolicy: Always #IfNotPresent
+        name: si-api
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: local-docker-compose #cio-bluemix
+        ports:
+        - containerPort: 8080
+          name: http 
+          protocol: TCP
+        # volumeMounts:
+        # - mountPath: application.yaml
+        #   name: config
+        #   subPath: server.xml
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      # volumes:
+      # - configMap:
+      #     defaultMode: 420
+      #     items:
+      #     - key: application.yaml
+      #       path: application.yaml
+      #     name: si-api-cm
+      #   name: config
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: si-api-service
+spec:
+  selector:
+    app: si-api
+  ports:
+   - protocol: TCP
+     targetPort: http
+     port: 80

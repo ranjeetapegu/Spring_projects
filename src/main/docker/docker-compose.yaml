@@ -1,0 +1,24 @@
+# Docker compose for LOCAL TEST
+version: '3.4'
+services:
+  si-api:
+    image: registry.ng.bluemix.net/dsw_im_saas_incentive/si-api:latest
+    restart: always
+#     replicas: ${SCRPYER_REPLICAS}
+#     deploy:
+#       replicas: ${SCRPYER_REPLICAS}
+    dns:
+      - 9.0.149.140
+      - 8.8.8.8
+      - 9.9.9.9
+      - 9.0.146.50
+    ports:
+      - "38080:80"
+    environment:
+      - "SPRING_PROFILES_ACTIVE=local-docker-compose"
+    # volumes:
+    #   - ./application.yml:application.yml
+
+# docker-compose up -d --scale newsscrpyer=1
+# docker logs newsscrpyer_newsscrpyer_1 -f
+#  docker-compose pull; docker-compose up -d  --force-recreate --scale newsscrpyer=1
