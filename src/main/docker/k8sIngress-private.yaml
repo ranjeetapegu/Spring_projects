@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: si-api-ingress
+  name: ranjeeta_spring-ingress
   annotations:
     ingress.bluemix.net/ALB-ID: "private-crb1470a2853a34eb39f6b356881c3650b-alb1"
 spec:

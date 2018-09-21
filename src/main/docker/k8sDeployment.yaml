@@ -2,14 +2,14 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    app: si-api
-  name: si-api-deployment
+    app: ranjeeta_spring
+  name: ranjeeta_spring-deployment
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: si-api
+      app: ranjeeta_spring
   strategy:
     rollingUpdate:
       maxSurge: 50%
@@ -18,12 +18,12 @@ spec:
   template:
     metadata:
       labels:
-        app: si-api
+        app: ranjeeta_spring
     spec:
       containers:
-      - image: registry.ng.bluemix.net/dsw_im_saas_incentive/si-api:latest
+      - image: registry.ng.bluemix.net/ranjeeta_spring/ranjeeta_spring:latest
         imagePullPolicy: Always #IfNotPresent
-        name: si-api
+        name: ranjeeta_spring
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: local-docker-compose #cio-bluemix
@@ -51,10 +51,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: si-api-service
+  name: ranjeeta_spring-service
 spec:
   selector:
-    app: si-api
+    app: ranjeeta_spring
   ports:
    - protocol: TCP
      targetPort: http

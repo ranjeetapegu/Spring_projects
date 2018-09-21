@@ -2,7 +2,7 @@
 version: '3.4'
 services:
   si-api:
-    image: registry.ng.bluemix.net/dsw_im_saas_incentive/si-api:latest
+    image: registry.ng.bluemix.net/ranjeeta_spring/ranjeeta_spring:latest
     restart: always
 #     replicas: ${SCRPYER_REPLICAS}
 #     deploy:
