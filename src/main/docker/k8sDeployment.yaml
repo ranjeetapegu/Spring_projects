@@ -21,7 +21,7 @@ spec:
         app: ranjeeta_spring
     spec:
       containers:
-      - image: registry.ng.bluemix.net/ranjeeta_spring/ranjeeta_spring:latest
+      - image: registry.ng.bluemix.net/ranjeeta_spring_wrk/ranjeeta_spring:latest
         imagePullPolicy: Always #IfNotPresent
         name: ranjeeta_spring
         env:
