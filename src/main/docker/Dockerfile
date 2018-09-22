@@ -12,4 +12,3 @@ EXPOSE 80
 RUN chmod +x start.sh
 ENTRYPOINT [ "sh", "-c" ]
 CMD ["/start.sh"]
-pose pull; docker-compose up -d  --force-recreate --scale newsscrpyer=1
