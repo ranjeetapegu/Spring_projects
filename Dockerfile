@@ -7,7 +7,7 @@ LABEL maintainer="ranjeeta.pegu@ibm.com"
 # Add a volume pointing to /tmp
 VOLUME /tmp
 # The application's jar file
-ARG JAR_FILE=target/ranjeeta_spring-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=target/ranjeeta_Spring-0.0.1-SNAPSHOT-wlp.jar
 
 ADD ${JAR_FILE} app.jar
 

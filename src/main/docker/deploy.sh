@@ -28,7 +28,7 @@ fi
 
 #
 if [ -z "$DOMAIN" ]; then
-    DOMAIN=9.208.8.32.nip.io
+    DOMAIN=9.218.8.32.nip.io
     echo "DOMAIN not found in ENV, using $DOMAIN"
 fi
 
@@ -54,7 +54,7 @@ echo ""
 DEPLOYMENT_FILE="deployment.yml"
 echo "Creating deployment file $DEPLOYMENT_FILE"
 
-kubectl create namespace si-api-fvt || true
+kubectl create namespace ranjeeta-spring-fvt || true
 kubectl get secret bluemix-default-secret -o yaml | sed 's/default/'"$NAME_SPACE"'/g' > secret.yaml
 kubectl -n $NAME_SPACE apply -f secret.yaml || true
 
@@ -115,7 +115,7 @@ spec:
   tls:
   - hosts:
     - $NAME.$NAME_SPACE.$DOMAIN
-    secretName: si-api
+    secretName: ranjeeta-spring
   rules:
   - host: $NAME.$NAME_SPACE.$DOMAIN
     http:

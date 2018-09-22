@@ -3,13 +3,13 @@ kind: Ingress
 metadata:
   name: ranjeeta_spring-ingress
   annotations:
-    ingress.bluemix.net/ALB-ID: "private-crb1470a2853a34eb39f6b356881c3650b-alb1"
+    ingress.bluemix.net/ALB-ID: "private-crb2470a2853a34eb39f6b356881c3650b-alb1"
 spec:
   rules:
-  - host: si-api.9.208.8.32.nip.io
+  - host: ranjeeta-spring.9.218.8.32.nip.io
     http:
       paths:
       - path: /
         backend:
-          serviceName: kubernetes-si
+          serviceName: kubernetes-rs
           servicePort: 80

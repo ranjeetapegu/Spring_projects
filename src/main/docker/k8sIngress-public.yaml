@@ -3,13 +3,13 @@ kind: Ingress
 metadata:
   name: si-api-ingress-public
   annotations:
-    ingress.bluemix.net/ALB-ID: "public-crb1470a2853a34eb39f6b356881c3650b-alb1"
+    ingress.bluemix.net/ALB-ID: "public-crb2470a2853a34eb39f6b356881c3650b-alb1"
 spec:
   rules:
-  - host: si-api.dsw-im-cloud-public-dev.us-south.containers.appdomain.cloud
+  - host: ranjeeta-spring.dsw-im-cloud-public-dev.us-south.containers.appdomain.cloud
     http:
       paths:
       - path: /
         backend:
-          serviceName: kubernetes-si
+          serviceName: kubernetes-rs
           servicePort: 80
