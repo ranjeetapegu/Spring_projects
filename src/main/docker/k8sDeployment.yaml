@@ -2,14 +2,14 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    app: ranjeeta-spring
-  name: ranjeeta-spring-deployment
+    app: rp-spring
+  name: rp-spring-deployment
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ranjeeta-spring
+      app: rp-spring
   strategy:
     rollingUpdate:
       maxSurge: 50%
@@ -18,12 +18,12 @@ spec:
   template:
     metadata:
       labels:
-        app: ranjeeta-spring
+        app: rp-spring
     spec:
       containers:
       - image: registry.ng.bluemix.net/ranjkub/ranjeeta_spring:latest
         imagePullPolicy: Always #IfNotPresent
-        name: ranjeeta-spring
+        name: rp-spring
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: local-docker-compose #cio-bluemix
