@@ -21,7 +21,7 @@ spec:
         app: ranjeeta-spring
     spec:
       containers:
-      - image: registry.ng.bluemix.net/ranjeeta_spring_wrk/ranjeeta_spring:latest
+      - image: registry.ng.bluemix.net/ranjkub/ranjeeta_spring:latest
         imagePullPolicy: Always #IfNotPresent
         name: ranjeeta-spring
         env:
@@ -51,10 +51,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ranjeeta-spring-service
+  name: rp-service
 spec:
   selector:
-    app: ranjeeta-spring
+    app: rp-spring
   ports:
    - protocol: TCP
      targetPort: http

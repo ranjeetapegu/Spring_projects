@@ -1,12 +1,12 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: si-api-ingress-public
+  name: rp-api-ingress-public
   annotations:
-    ingress.bluemix.net/ALB-ID: "public-crb2470a2853a34eb39f6b356881c3650b-alb1"
+    ingress.bluemix.net/ALB-ID: "public-cr3270956cbe4147c392dcc54c2f3af335-alb1"
 spec:
   rules:
-  - host: ranjeeta-spring.dsw-im-cloud-public-dev.us-south.containers.appdomain.cloud
+  - host: rp.dsw-im-cloud-public-dev.us-south.containers.appdomain.cloud
     http:
       paths:
       - path: /

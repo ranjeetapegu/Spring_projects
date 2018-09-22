@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: ranjeeta_spring-ingress
+  name: ranjeeta-spring-ingress
   annotations:
-    ingress.bluemix.net/ALB-ID: "private-crb2470a2853a34eb39f6b356881c3650b-alb1"
+    ingress.bluemix.net/ALB-ID: "private-cr3270956cbe4147c392dcc54c2f3af335-alb1"
 spec:
   rules:
   - host: ranjeeta-spring.9.218.8.32.nip.io
